@@ -33,22 +33,19 @@ class App extends React.Component {
 			this.setState({
 				videos : [
 					{
-						id : 1,
-						url : "http://img.youtube.com/vi/S1Br9SRv3EA/0.jpg",
+						id : 'S1Br9SRv3EA',
 						author : "Auteur de la video",
 						title : "Titre de la video",
 						filters : ['filter1', 'filter2']
 					},
 					{
-						id : 2,
-						url : "http://img.youtube.com/vi/S1Br9SRv3EA/0.jpg",
+						id : 'S1Br9SRv3EA',
 						author : "Auteur de la video2",
 						title : "Titre de la video2",
 						filters : ['filter2', 'filter3']
 					},
 					{
-						id : 3,
-						url : "http://img.youtube.com/vi/S1Br9SRv3EA/0.jpg",
+						id : 'S1Br9SRv3EA',
 						author : "Auteur de la video3",
 						title : "Titre de la video3",
 						filters : ['filter1', 'filter3']
@@ -91,10 +88,10 @@ class App extends React.Component {
 			this.setState(
 				{
 					videoDetail : {
-						'author' : 'glenn',
+						'id' : 'S1Br9SRv3EA',
+ 						'author' : 'glenn',
 						'title' : 'titre glenn',
 						'filters' : ['filter1', 'filter2', 'filter3'],
-						'url' : 'https://www.youtube.com/embed/S1Br9SRv3EA',
 						'description' : "Etenim si attendere diligenter, existimare vere de omni hac causa volueritis, sic constituetis, iudices, nec descensurum quemquam ad hanc accusationem fuisse, cui, utrum vellet, liceret, nec, cum descendisset, quicquam habiturum spei fuisse, nisi alicuius intolerabili libidine et nimis acerbo odio niteretur. Sed ego Atratino, humanissimo atque optimo adulescenti meo necessario, ignosco, qui habet excusationem vel pietatis vel necessitatis vel aetatis. Si voluit accusare, pietati tribuo, si iussus est, necessitati, si speravit aliquid, pueritiae. Ceteris non modo nihil ignoscendum, sed etiam acriter est resistendum."
 					}
 				}
@@ -128,7 +125,7 @@ class App extends React.Component {
 				) : (
 					<ListVideos
 						videos={this.state.videos}
-						onClick={() => {this.goToDetail()}}
+						onClick={(id) => {this.goToDetail(id)}}
 						filters={this.state.filters}
 					/>
 			    )}

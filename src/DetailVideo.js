@@ -3,9 +3,12 @@ import Button from 'react-bootstrap/lib/Button';
 
 class DetailVideo extends React.Component {
 	render() {
-		var filters = [];
-		if(this.props.detail !== null)
+		let filters = [];
+		let url = '';
+		if(this.props.detail !== null){
 			filters = this.props.detail.filters;
+			url = "https://www.youtube.com/embed/" + this.props.detail.id;
+		}
 		
 		const filtersList = filters.map((filter) =>
 			<span className="label label-primary">
@@ -29,7 +32,7 @@ class DetailVideo extends React.Component {
 						</div>
 						
 						<div className='row'>
-							<iframe width="560" height="315" frameBorder="0" src={this.props.detail.url} frameborder="0" allowfullscreen></iframe>
+							<iframe width="560" height="315" frameBorder="0" src={url} frameborder="0" allowfullscreen></iframe>
 						</div>
 						
 						<div className='row'>

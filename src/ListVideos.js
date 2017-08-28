@@ -40,10 +40,10 @@ class ListVideos extends React.Component {
 				return videoDesc;
 		  }).map((videoDesc) => {
 			return <VideoLink 
-				url={videoDesc.url}
+				id={videoDesc.id}
 				title={videoDesc.title}
 				author={videoDesc.author}
-				onClick={() => {onClick(videoDesc.id)}}
+				onClick={onClick}
 			/>
 		});
 
